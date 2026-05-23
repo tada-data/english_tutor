@@ -238,7 +238,14 @@ if st.session_state.user_id is None:
     
     with st.form("login_form"):
         user_email = st.text_input("이메일", placeholder="예: user@example.com")
-        invite_code = st.text_input("초대 코드 (비밀번호)", type="password", placeholder="초대 코드를 입력하세요")
+        saved_code = st.query_params.get("pw", "") # 주소창에서 pw라는 이름의 값을 몰래 가져옴
+
+        invite_code = st.text_input(
+            "초대 코드 (비밀번호)", 
+            value=saved_code,  # URL에 비밀번호가 있으면 자동으로 입력칸에 채워짐!
+            type="password", 
+            placeholder="초대 코드를 입력하세요"
+        )
         submit_btn = st.form_submit_button("입장하기 🚀", use_container_width=True)
         
         if submit_btn:

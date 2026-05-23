@@ -3,3 +3,4 @@ google-generativeai
 supabase
 audio-recorder-streamlit
 gTTS
+edge-tts

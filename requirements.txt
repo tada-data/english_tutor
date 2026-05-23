@@ -1,0 +1,5 @@
+streamlit
+google-generativeai
+supabase
+audio-recorder-streamlit
+gTTS

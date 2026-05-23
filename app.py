@@ -23,6 +23,28 @@ st.markdown("""
     .pinned-word { border: 2px solid #EF4444; background-color: #FEF2F2; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
     .normal-word { border: 1px solid #E5E7EB; padding: 15px; border-radius: 10px; margin-bottom: 10px; }
     .speaking-guide { background-color: #EFF6FF; padding: 15px; border-radius: 12px; border-left: 5px solid #3B82F6; font-size: 13px; color: #1E40AF; margin-bottom: 15px; }
+
+    /* 👇 여기서부터 새로 추가하는 모바일 전용 UI 설정 👇 */
+    @media (max-width: 768px) {
+        /* 1. 일반 텍스트 입력창 (st.text_input) 글자 및 패딩 축소 */
+        div[data-baseweb="input"] input {
+            font-size: 14px !important;
+            padding: 8px 10px !important;
+        }
+        
+        /* 2. 채팅 입력창 (st.chat_input) 글자 및 높이 축소 */
+        div[data-testid="stChatInput"] textarea {
+            font-size: 14px !important;
+            padding: 10px !important;
+            min-height: 45px !important;
+        }
+        
+        /* 3. Placeholder(배경 안내 문구) 텍스트 크기 별도 축소 */
+        ::placeholder {
+            font-size: 13px !important;
+        }
+    }
+            
 </style>
 """, unsafe_allow_html=True)
 
